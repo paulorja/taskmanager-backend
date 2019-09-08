@@ -32,6 +32,11 @@ class Task < ApplicationRecord
     return true
   end
 
+  before_destroy do
+    last_task = Task.last_position(self.status)
+    move(last_task.position) if last_task
+  end
+
   before_create do
     last_task = Task.last_position(self.status)
     if last_task
