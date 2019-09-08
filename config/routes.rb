@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get '/members', to: 'members#index'
 
   resources :tasks
+  match '/tasks/:id/move', to: 'tasks#move', via: :post
 
 end

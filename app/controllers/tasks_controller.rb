@@ -1,9 +1,9 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :update, :destroy]
+  before_action :set_task, only: [:show, :update, :destroy, :move]
 
   # GET /tasks
   def index
-    @tasks = Task.all
+    @tasks = Task.order(position: :asc).all
 
     render json: @tasks
   end
@@ -36,6 +36,15 @@ class TasksController < ApplicationController
   # DELETE /tasks/1
   def destroy
     @task.destroy
+  end
+
+  # MOVE /tasks/1/move
+  def move
+    if @task.move(params[:position])
+      render json: @task
+    else
+      render json: false, status: :unprocessable_entity
+    end
   end
 
   private
