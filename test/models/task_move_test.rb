@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TaskTest < ActiveSupport::TestCase
+class TaskMoveTest < ActiveSupport::TestCase
 
   test "should add the position automatically" do
     prepare_tasks

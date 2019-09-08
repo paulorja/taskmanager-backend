@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   resources :tasks
   match '/tasks/:id/move', to: 'tasks#move', via: :post
+  match '/tasks/:id/transfer', to: 'tasks#transfer', via: :post
 
 end

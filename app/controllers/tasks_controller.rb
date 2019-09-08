@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :update, :destroy, :move]
+  before_action :set_task, only: [:show, :update, :destroy, :move, :transfer]
 
   # GET /tasks
   def index
@@ -41,6 +41,15 @@ class TasksController < ApplicationController
   # MOVE /tasks/1/move
   def move
     if @task.move(params[:position])
+      render json: @task
+    else
+      render json: false, status: :unprocessable_entity
+    end
+  end
+
+  # TRANSFER /tasks/1/transfer
+  def transfer 
+    if @task.transfer(params[:position], params[:status_id])
       render json: @task
     else
       render json: false, status: :unprocessable_entity
