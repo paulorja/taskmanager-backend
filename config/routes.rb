@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get '/status', to: 'status#index'
+  get '/priorities', to: 'priorities#index'
+  get '/members', to: 'members#index'
+
+  resources :tasks
+  match '/tasks/:id/move', to: 'tasks#move', via: :post
+  match '/tasks/:id/transfer', to: 'tasks#transfer', via: :post
+
 end

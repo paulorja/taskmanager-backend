@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+without_relationship:
+  title: "Some Title"
+  priority: nil 
+  member: nil
+  status: nil
+  position: 1
+
+without_title:
+  priority: Alta
+  member: Paul
+  status: Doing
+  position: 1
+
+with_title:
+  title: "Some Title"
+  priority: Alta
+  member: Paul
+  status: Doing
+  position: 2
