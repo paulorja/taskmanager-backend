@@ -15,13 +15,13 @@ Priority.create([
 ])
 
 Status.create([
-	{ name: "To Do" },
-	{ name: "Doing" },
-	{ name: "Done" }
+	{ name: "Para fazer" },
+	{ name: "Em andamento" },
+	{ name: "Finalizado" }
 ])
 
 Member.create([
-	{ name: "Daniel Herrman", imgUrl: "https://pt.fakenamegenerator.com/images/sil-male.png" },
-	{ name: "Robert Sanders", imgUrl: "https://pt.fakenamegenerator.com/images/sil-male.png" },
-	{ name: "Gloria Hurley", imgUrl: "https://pt.fakenamegenerator.com/images/sil-female.png" }
+	{ name: "Daniel Herrman", imgUrl: "https://image.flaticon.com/icons/svg/145/145867.svg" },
+	{ name: "Robert Sanders", imgUrl: "https://image.flaticon.com/icons/svg/145/145859.svg" },
+	{ name: "Gloria Hurley", imgUrl: "https://image.flaticon.com/icons/svg/145/145852.svg" }
 ])
