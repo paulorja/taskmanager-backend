@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_09_08_000356) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "members", force: :cascade do |t|
     t.string "name"
     t.string "imgUrl"
@@ -35,9 +38,9 @@ ActiveRecord::Schema.define(version: 2019_09_08_000356) do
     t.string "title"
     t.text "description"
     t.date "date"
-    t.integer "priority_id", null: false
-    t.integer "member_id", null: false
-    t.integer "status_id", null: false
+    t.bigint "priority_id", null: false
+    t.bigint "member_id", null: false
+    t.bigint "status_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "position"
